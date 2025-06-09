@@ -1,10 +1,12 @@
+require('dotenv').config();
+
 const { Router, json } = require("express")
 const adminRouter = Router();
 const { adminModel, courseModel } = require("../db/db.js")
 const { z } = require("zod");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken")
-const JWT_ADMIN = require("../config.js")
+const JWT_ADMIN = process.env.JWT_ADMIN_SECRET
 const { adminMiddleWare } = require("../middleware/adminMid.js");
 
 
