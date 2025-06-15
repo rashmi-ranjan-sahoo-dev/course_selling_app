@@ -12,7 +12,7 @@ const Auth = () => {
 
   return (
     <div
-    className='w-fit h-fit border border-black relative top-16  rounded-2xl'
+    className='w-fit h-fit border border-black relative top-16 '
     > 
       <div
       onClick={toggleIsLoggedIn}
