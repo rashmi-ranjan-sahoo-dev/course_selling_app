@@ -4,15 +4,21 @@ import { FaRegSun } from "react-icons/fa6";
 import { FaRegMoon } from "react-icons/fa6";
 import { AuthContext } from "../ContextAPI/AuthContext";
 import { useContext } from "react";
-
+ import { MdManageAccounts } from "react-icons/md";
+import Auth from "../Authentication/Auth";
 
 
 const Header = () => {
 
- const {isDark,setIsDark} = useContext(AuthContext)
+ const {isDark,setIsDark,isActive,setIsActive} = useContext(AuthContext)
 
  function toggleIsDark(){
   setIsDark(!isDark)
+ }
+
+ function toggleIsActive(){
+  setIsActive(!isActive)
+  // console.log(isActive)
  }
 
   return (
@@ -42,13 +48,21 @@ const Header = () => {
            href="/ContactUs"
            className='md:text-3xl sm:text-xl font-mono  hover:border-b transition-all delay-100 duration-100 ease-in-out'>CountactUs</a>
       </div>
-      <div>
+      <div 
+      className="flex md:gap-6 gap-2">
       <div 
       onClick={toggleIsDark}
       className={` border text-sky-400 p-1
-      text-2xl rounded-full h-10 w-10 flex items-center justify-center `}
+      text-2xl rounded-full h-10 w-10 flex items-center justify-center cursor-pointer`}
       >
         {isDark ? <FaRegSun/> : <FaRegMoon/>}
+      </div>
+     <div 
+      onClick={toggleIsActive}
+      className={`border text-sky-400 p-1
+      text-2xl rounded-full h-10 w-10 flex items-center justify-center cursor-pointer `}
+      >
+        {isActive ? <MdManageAccounts/> : <Auth/>}
       </div>
       </div>
     </nav>
