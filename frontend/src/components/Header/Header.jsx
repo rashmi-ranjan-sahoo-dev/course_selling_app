@@ -44,9 +44,6 @@ const Header = () => {
           <a 
           href="/Purcheses"
            className='md:text-3xl sm:text-xl font-mono  hover:border-b transition-all delay-100 duration-100 ease-in-out'>Purcheses</a>
-          <a  
-           href="/ContactUs"
-           className='md:text-3xl sm:text-xl font-mono  hover:border-b transition-all delay-100 duration-100 ease-in-out'>CountactUs</a>
       </div>
       <div 
       className="flex md:gap-6 gap-2">
