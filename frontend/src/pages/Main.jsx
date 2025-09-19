@@ -3,6 +3,9 @@ import Header from '../components/Header/Header'
 import { AuthContext } from '../components/ContextAPI/AuthContext'
 import { Outlet } from 'react-router'
 import Body from '../components/Body/Body'
+
+
+
 const Main = () => {
   const {isDark,isLoggedIn} = useContext(AuthContext)
   return (
