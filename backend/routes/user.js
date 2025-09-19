@@ -6,7 +6,7 @@ const { userModel, purchaseModel, courseModel } = require("../db/db");
 const { z } = require("zod");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken")
-const JWT_USER = JWT_USER_SECRET
+const JWT_USER = process.env.JWT_USER_SECRET
 const { userMiddleWare } = require("../middleware/userMid.js")
 
 const userRouter = Router();

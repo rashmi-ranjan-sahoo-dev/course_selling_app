@@ -9,7 +9,7 @@ const { courseRouter } = require("./routes/course")
 const { adminRouter } = require("./routes/admin")
 
 app.use(express.json());
-app.use(axios());
+// app.use(axios());
 const port = process.env.PORT
 const mongo_url = process.env.MONGO_URL
 
