@@ -5,7 +5,7 @@ import { FaRegMoon } from "react-icons/fa6";
 import { AuthContext } from "../ContextAPI/AuthContext";
 import { useContext } from "react";
  import { MdManageAccounts } from "react-icons/md";
-import Auth from "../Authentication/Auth";
+
 
 
 const Header = () => {
@@ -59,7 +59,7 @@ const Header = () => {
       className={`border text-sky-400 p-1
       text-2xl rounded-full h-10 w-10 flex items-center justify-center cursor-pointer `}
       >
-        {isActive ? <MdManageAccounts/> : <Auth/>}
+         <MdManageAccounts/>
       </div>
       </div>
     </nav>

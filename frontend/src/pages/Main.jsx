@@ -12,7 +12,12 @@ const Main = () => {
   return (
     <div className= {`h-full w-full ${isDark ? "bg-black text-white" : "bg-white text-black"}`}>
       <Header/>
-      {isLoggedIn ?<Body/>:<Outlet/>}
+      {isLoggedIn ?
+      (<div>
+        <Body/>
+        <Outlet/>
+        </div>):(
+          <Outlet/>)}
       <Footer/>
     </div>
   )
