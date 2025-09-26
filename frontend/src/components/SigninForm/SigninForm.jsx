@@ -1,9 +1,13 @@
 import { useState } from "react";
 import axios from "axios";
+import { AuthContext } from "../ContextAPI/AuthContext";
+import { useContext } from "react";
 
 export default function SigninForm({ role }) {
   const [formData, setFormData] = useState({ email: "", password: "" });
   const [message, setMessage] = useState("");
+
+  const {isLoggedIn,setIsLoggedIn} = useContext(AuthContext)
 
   const handleChange = (e) => {
     setFormData({...formData, [e.target.name]: e.target.value});
@@ -15,6 +19,7 @@ export default function SigninForm({ role }) {
       const url = role === "admin" ? "api/vi/admin/signin" : "api/vi/user/signin";
       const res = await axios.post(url, formData);
       localStorage.setItem(`${role}Token`, res.data.token);
+      setIsLoggedIn(!isLoggedIn);
       setMessage("Signin successful ✅");
     } catch (err) {
       setMessage(err.response?.data?.message || "Signin failed");

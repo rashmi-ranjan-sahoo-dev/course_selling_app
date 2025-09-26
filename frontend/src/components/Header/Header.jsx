@@ -5,12 +5,14 @@ import { FaRegMoon } from "react-icons/fa6";
 import { AuthContext } from "../ContextAPI/AuthContext";
 import { useContext } from "react";
  import { MdManageAccounts } from "react-icons/md";
+import Auth from "../Auth/Auth";
+import Logout from "../Logout/Logout";
 
 
 
 const Header = () => {
 
- const {isDark,setIsDark,isActive,setIsActive} = useContext(AuthContext)
+ const {isDark,setIsDark,isActive,setIsActive,isLoggedIn} = useContext(AuthContext)
 
  function toggleIsDark(){
   setIsDark(!isDark)
@@ -36,7 +38,7 @@ const Header = () => {
       </div>
       <div className='flex items-center justify-center sm:gap-3 md:gap-6'>
           <a 
-          href="/Home"
+          href="/"
           className='md:text-3xl sm:text-xl font-mono  hover:border-b transition-all delay-100 duration-100 ease-in-out'>Home</a>
           <a 
           href="/Courses"
@@ -60,8 +62,12 @@ const Header = () => {
       text-2xl rounded-full h-10 w-10 flex items-center justify-center cursor-pointer `}
       >
          <MdManageAccounts/>
+
+         {isLoggedIn ? (isActive && <Logout/>) : (isActive && <Auth/>)}
+         
       </div>
       </div>
+       
     </nav>
   )
 }

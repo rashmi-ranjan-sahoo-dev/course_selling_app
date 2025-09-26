@@ -8,16 +8,12 @@ import Footer from '../components/Footer/Footer'
 
 
 const Main = () => {
-  const {isDark,isLoggedIn} = useContext(AuthContext)
+  const {isDark} = useContext(AuthContext)
   return (
     <div className= {`h-full w-full ${isDark ? "bg-black text-white" : "bg-white text-black"}`}>
       <Header/>
-      {isLoggedIn ?
-      (<div>
-        <Body/>
-        <Outlet/>
-        </div>):(
-          <Outlet/>)}
+      <Body/>
+      <Outlet/>
       <Footer/>
     </div>
   )
