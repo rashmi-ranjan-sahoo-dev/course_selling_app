@@ -37,6 +37,8 @@ userRouter.post("/signup",async function (req,res) {
         const password = req.body.password;
         const firstName = req.body.firstName;
         const lastName = req.body.lastName;
+
+        console.log(email)
      try{
     
          const hashedpassword = await bcrypt.hash(password,5)
@@ -88,7 +90,7 @@ userRouter.post("/signin",async function (req,res) {
         })
 
         if(!response){
-            res.status(403).json({
+           return  res.status(403).json({
                 msg:"user not found"
             })
         }
@@ -100,7 +102,7 @@ userRouter.post("/signin",async function (req,res) {
         // console.log(passwordMatch)
 
         if(passwordMatch){
-            const token = jwt.sign({id:response._id},JWT_USER.JWT_USER_SECRET)
+            const token = jwt.sign({id:response._id},JWT_USER)
 
             res.json({
                 token

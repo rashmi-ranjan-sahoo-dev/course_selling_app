@@ -20,7 +20,7 @@ const Logout = ({ role }) => {
   return (
     <button
     onClick={handleLogout}
-    className='bg-red-400 hover:bg-red-600 px-4 py-2 rounded-xl w-fit h-fit p-4'>
+    className='bg-red-400 hover:bg-red-600 px-4 py-2 rounded-xl w-fit h-fit p-4 relative top-12'>
      Logout
     </button>
   )

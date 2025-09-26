@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
-const axios = require("axios");
+const cors = require("cors");
 require('dotenv').config();
 
 const { userRouter } = require("./routes/user")
@@ -9,7 +9,7 @@ const { courseRouter } = require("./routes/course")
 const { adminRouter } = require("./routes/admin")
 
 app.use(express.json());
-// app.use(axios());
+app.use(cors());
 
 const port = process.env.PORT
 const mongo_url = process.env.MONGO_URL

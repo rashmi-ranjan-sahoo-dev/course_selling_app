@@ -22,11 +22,11 @@ export default function SignupForm({ role }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const url = role === "admin" ? "api/vi/admin/signup" : "api/vi/user/signup";
+      const url = role === "admin" ? "http://localhost:3000/api/v1/admin/signup" : "http://localhost:3000/api/v1/user/signup";
       const res = await axios.post(url, formData);
       setMessage(res.data.message || "Signup successful");
       if(res){
-        navigate(`${role}/signin`)
+        navigate(`/${role}/signin`)
       }
     } catch (err) {
       setMessage(err.response?.data?.message || "Signup failed");
