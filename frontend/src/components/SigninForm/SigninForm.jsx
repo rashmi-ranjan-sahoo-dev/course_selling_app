@@ -22,12 +22,14 @@ export default function SigninForm({ role }) {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="p-4 border rounded w-80 mx-auto mt-10">
-      <h2 className="text-xl font-bold mb-3">{role} Signin</h2>
-      <input className="border p-2 w-full mb-2" type="email" name="email" placeholder="Email" onChange={handleChange}/>
-      <input className="border p-2 w-full mb-2" type="password" name="password" placeholder="Password" onChange={handleChange}/>
+     <div className="flex items-center justify-center min-h-screen">
+    <form onSubmit={handleSubmit} className="p-4 border rounded w-80 mx-auto text-center">
+      <h2 className="text-xl font-bold mb-3">{role.charAt(0).toUpperCase() + role.slice(1)} Signin</h2>
+      <input className="border p-2 w-full mb-2 rounded font-bold" type="email" name="email" placeholder="Email" onChange={handleChange}/>
+      <input className="border p-2 w-full mb-2 rounded font-bold" type="password" name="password" placeholder="Password" onChange={handleChange}/>
       <button className="bg-green-500 text-white px-4 py-2 rounded" type="submit">Signin</button>
       <p className="mt-2 text-sm text-gray-600">{message}</p>
     </form>
+    </div>
   );
 }

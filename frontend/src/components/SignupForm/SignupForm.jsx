@@ -34,14 +34,16 @@ export default function SignupForm({ role }) {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="p-4 border rounded w-80 mx-auto mt-10">
-      <h2 className="text-xl font-bold mb-3">{role} Signup</h2>
-      <input className="border p-2 w-full mb-2" name="firstName" placeholder="First Name" onChange={handleChange}/>
-      <input className="border p-2 w-full mb-2" name="lastName" placeholder="Last Name" onChange={handleChange}/>
-      <input className="border p-2 w-full mb-2" type="email" name="email" placeholder="Email" onChange={handleChange}/>
-      <input className="border p-2 w-full mb-2" type="password" name="password" placeholder="Password" onChange={handleChange}/>
+    <div className="flex items-center justify-center min-h-screen">
+    <form onSubmit={handleSubmit} className="p-4 border rounded w-80 text-center">
+      <h2 className="text-xl font-bold mb-3">{role.charAt(0).toUpperCase() + role.slice(1)} Signup</h2>
+      <input className="border p-2 w-full mb-2 rounded  font-semibold" name="firstName" placeholder="First Name" onChange={handleChange}/>
+      <input className="border p-2 w-full mb-2 rounded  font-semibold" name="lastName" placeholder="Last Name" onChange={handleChange}/>
+      <input className="border p-2 w-full mb-2 rounded  font-semibold" type="email" name="email" placeholder="Email" onChange={handleChange}/>
+      <input className="border p-2 w-full mb-2 rounded font-semibold" type="password" name="password" placeholder="Password" onChange={handleChange}/>
       <button className="bg-blue-500 text-white px-4 py-2 rounded" type="submit">Signup</button>
-      <p className="mt-2 text-sm text-gray-600">{message}</p>
+      <p className="mt-2 text-sm text-gray-600 font-bold">{message}</p>
     </form>
+    </div>
   );
 }
