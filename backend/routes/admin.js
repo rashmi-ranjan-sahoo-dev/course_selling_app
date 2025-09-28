@@ -93,10 +93,12 @@ adminRouter.post("/signin",async function (req,res){
             })
         }
 
+        console.log(response.password)
+
         const passwordMatch = bcrypt.compare(password,response.password)
 
         if(passwordMatch){
-            const token = jwt.sign({id:response._id.toString()},JWT_ADMIN.JWT_ADMIN_SECRET)
+            const token = jwt.sign({id:response._id.toString()},JWT_ADMIN)
             res.json({
                 token
             })
@@ -108,7 +110,7 @@ adminRouter.post("/signin",async function (req,res){
     }catch (error) {
     console.error("Error during admin signin:", error);
     res.status(500).json({
-        message: "An error occurred during sign",
+        message: "An error occurred during signin",
         error: error.message
     });
 }

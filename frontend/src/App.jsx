@@ -5,6 +5,7 @@ import AdminSignin from './pages/AdminSignin/AdminSignin'
 import AdminSignup from './pages/AdminSignup/AdminSignup'
 import UserSignin from './pages/UserSignin/UserSignin'
 import UserSignup from './pages/UserSignup/UserSignup'
+import ManegeCourse from './pages/ManegeCourse/ManegeCourse'
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
        <Route path= "admin/signin" element={<AdminSignin />} />
        <Route path= "user/signup" element={<UserSignup />} />
        <Route path= "user/signin" element={<UserSignin />} />
+       <Route path='manegecourse' element={<ManegeCourse/>} />
     </Routes>
     </BrowserRouter>
   )
