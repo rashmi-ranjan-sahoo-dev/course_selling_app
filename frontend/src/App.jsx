@@ -6,6 +6,7 @@ import AdminSignup from './pages/AdminSignup/AdminSignup'
 import UserSignin from './pages/UserSignin/UserSignin'
 import UserSignup from './pages/UserSignup/UserSignup'
 import CourseManage from './pages/CourseManage/CourseManage'
+import Courses from './pages/Courses/Courses'
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
        <Route path= "user/signup" element={<UserSignup />} />
        <Route path= "user/signin" element={<UserSignin />} />
        <Route path='managecourse' element={<CourseManage/>} />
+       <Route path='courses' element={<Courses/>} />
     </Routes>
     </BrowserRouter>
   )

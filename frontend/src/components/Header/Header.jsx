@@ -41,10 +41,10 @@ const Header = () => {
           href="/"
           className='md:text-3xl sm:text-xl font-mono  hover:border-b transition-all delay-100 duration-100 ease-in-out'>Home</a>
           <a 
-          href="/Courses"
+          href="/courses"
           className='md:text-3xl sm:text-xl font-mono  hover:border-b transition-all delay-100 duration-100 ease-in-out'>Courses</a>
           <a 
-          href="/Purcheses"
+          href="/purcheses"
            className='md:text-3xl sm:text-xl font-mono  hover:border-b transition-all delay-100 duration-100 ease-in-out'>Purcheses</a>
       </div>
       <div 
