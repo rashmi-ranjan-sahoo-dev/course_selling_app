@@ -33,7 +33,7 @@ export default function SigninForm({ role }) {
       setMessage("Signin successful ✅");
 
 
-      if(role === "admin") navigate("/manegecourse")
+      if(role === "admin") navigate("/managecourse")
       else navigate("/");
       
     } catch (err) {
