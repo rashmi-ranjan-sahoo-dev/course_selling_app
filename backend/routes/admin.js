@@ -100,7 +100,7 @@ adminRouter.post("/signin",async function (req,res){
         if(passwordMatch){
             const token = jwt.sign({id:response._id.toString()},JWT_ADMIN)
             res.json({
-                token
+                token:token
             })
         }else{
             res.status(403).json({

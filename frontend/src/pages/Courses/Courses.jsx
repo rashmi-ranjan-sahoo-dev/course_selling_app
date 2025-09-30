@@ -6,7 +6,7 @@ import { AuthContext } from '../../components/ContextAPI/AuthContext';
 
 const Courses = () => {
   const [courses, setCourses] = useState([]);
-  const {isDrak} = useContext(AuthContext);
+  const {isDark} = useContext(AuthContext);
 
   useEffect(() => {
     axios.get("http://localhost:3000/api/v1/course/preview")
@@ -30,7 +30,7 @@ const Courses = () => {
   };
 
   return (
-    <div className={`min-h-screen flex flex-col ${isDrak ? "bg-black text-white" : "bg-white text-black"}`}>
+    <div className={`min-h-screen flex flex-col ${isDark ? "bg-black text-white" : "bg-white text-black"}`}>
       {/* 🔹 Header */}
       <Header />
 
