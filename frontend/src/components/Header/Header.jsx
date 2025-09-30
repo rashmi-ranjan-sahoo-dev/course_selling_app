@@ -44,7 +44,7 @@ const Header = () => {
           href="/courses"
           className='md:text-3xl sm:text-xl font-mono  hover:border-b transition-all delay-100 duration-100 ease-in-out'>Courses</a>
           <a 
-          href="/purcheses"
+          href="/purchases"
            className='md:text-3xl sm:text-xl font-mono  hover:border-b transition-all delay-100 duration-100 ease-in-out'>Purcheses</a>
       </div>
       <div 

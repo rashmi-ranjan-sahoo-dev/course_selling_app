@@ -7,6 +7,7 @@ import UserSignin from './pages/UserSignin/UserSignin'
 import UserSignup from './pages/UserSignup/UserSignup'
 import CourseManage from './pages/CourseManage/CourseManage'
 import Courses from './pages/Courses/Courses'
+import Purchases from './pages/Purchases/Purchases'
 
 const App = () => {
   return (
@@ -19,6 +20,7 @@ const App = () => {
        <Route path= "user/signin" element={<UserSignin />} />
        <Route path='managecourse' element={<CourseManage/>} />
        <Route path='courses' element={<Courses/>} />
+       <Route path='purchases' element={<Purchases/>} />
     </Routes>
     </BrowserRouter>
   )
