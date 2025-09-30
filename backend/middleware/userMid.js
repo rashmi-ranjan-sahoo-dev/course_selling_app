@@ -4,7 +4,8 @@ const jwt = require("jsonwebtoken");
 const JWT_USER_SECRET = process.env.JWT_USER_SECRET;
 
 const userMiddleWare = (req,res,next) =>{
-    const token = req.headers.token;
+         const token = req.headers.authorization?.split(" ")[1];
+
     
     const decoded =  jwt.verify(token,JWT_USER_SECRET);
     console.log(JWT_USER_SECRET);

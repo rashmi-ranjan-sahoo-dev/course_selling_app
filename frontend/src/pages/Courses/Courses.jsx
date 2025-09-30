@@ -17,6 +17,7 @@ const Courses = () => {
   const handleBuy = async (courseId) => {
     try {
       const token = localStorage.getItem("userToken");
+      console.log(token);
       await axios.post(
         "http://localhost:3000/api/v1/course/purchase",
         { courseId },
