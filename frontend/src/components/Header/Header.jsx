@@ -12,7 +12,7 @@ import Logout from "../Logout/Logout";
 
 const Header = () => {
 
- const {isDark,setIsDark,isActive,setIsActive,isLoggedIn} = useContext(AuthContext)
+ const {isDark,setIsDark,isActive,setIsActive,isLoggedIn,role} = useContext(AuthContext)
 
  function toggleIsDark(){
   setIsDark(!isDark)
@@ -22,6 +22,9 @@ const Header = () => {
   setIsActive(!isActive)
   // console.log(isActive)
  }
+
+ console.log(isActive)
+ console.log(isLoggedIn)
 
   return (
     <nav
@@ -63,7 +66,7 @@ const Header = () => {
       >
          <MdManageAccounts/>
 
-         {isLoggedIn ? (isActive && <Logout/>) : (isActive && <Auth/>)}
+         {isLoggedIn ? (isActive && <Logout role={role}/>) : (isActive && <Auth/>)}
          
       </div>
       </div>

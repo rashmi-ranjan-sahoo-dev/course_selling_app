@@ -7,12 +7,12 @@ const Logout = ({ role }) => {
 
     const navigate = useNavigate();
 
-    const {isLoggedIn, setIsLoggedIn} = useContext(AuthContext);
+    const { setIsLoggedIn} = useContext(AuthContext);
     const handleLogout = () =>{
         localStorage.removeItem(`${role}Token`);
 
         alert("Logged out ✅");
-        setIsLoggedIn(!isLoggedIn)
+        setIsLoggedIn(false)
 
         navigate("/")
     }

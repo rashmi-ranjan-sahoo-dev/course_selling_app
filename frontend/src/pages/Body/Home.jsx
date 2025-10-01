@@ -2,8 +2,10 @@ import React from 'react'
 import img1 from "../../assets/img-1.jpeg"
 import img2 from "../../assets/img-2.jpeg"
 import img3 from "../../assets/img-3.jpeg"
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
+  const navigate = useNavigate();
   return (
     <div 
     className='w-full h-full flex flex-col justify-center items-center p-20'>
@@ -18,7 +20,8 @@ const Home = () => {
       </div>
       <div className='m-2'>
         <button
-        className='w-fit h-fit bg-orange-500 hover:bg-orange-600 transition-all duration-400 hover:p-4 p-3 text-xl hover:text-2xl rounded-2xl cursor-pointer'>Explore Courses</button>
+        className='w-fit h-fit bg-orange-500 hover:bg-orange-600 transition-all duration-400 hover:p-4 p-3 text-xl hover:text-2xl rounded-2xl cursor-pointer'
+        onClick={() => navigate("/courses")}>Explore Courses</button>
       </div>
       {/* Sccrollngf images section */}
       <div

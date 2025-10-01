@@ -9,7 +9,7 @@ export default function SigninForm({ role }) {
   const [formData, setFormData] = useState({ email: "", password: "" });
   const [message, setMessage] = useState("");
 
-  const {isLoggedIn,setIsLoggedIn} = useContext(AuthContext)
+  const {setIsLoggedIn} = useContext(AuthContext)
 
   const navigate = useNavigate();
 
@@ -28,13 +28,13 @@ export default function SigninForm({ role }) {
 
       localStorage.setItem(`${role}Token`, res.data.token);
 
-      setIsLoggedIn(!isLoggedIn);
+      setIsLoggedIn(true);
 
       setMessage("Signin successful ✅");
 
 
       if(role === "admin") navigate("/managecourse")
-      else navigate("/");
+      else navigate("/purchases");
       
     } catch (err) {
       setMessage(err.response?.data?.message || "Signin failed");
