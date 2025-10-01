@@ -8,35 +8,46 @@ const Home = () => {
   const navigate = useNavigate();
   return (
     <div 
-    className='w-full h-full flex flex-col justify-center items-center p-20'>
+    className='w-full min-h-screen flex flex-col justify-center items-center px-4 py-8 sm:px-8 md:px-12 lg:px-20'>
+      {/* Hero Text Section */}
       <div
-      className='h-30 w-200 text-center '
+      className='max-w-5xl text-center mb-4 sm:mb-6'
       >
-        <span 
-        className='text-orange-600 text-5xl font-extrabold'>SkillHub:</span><span  className=' text-5xl font-extrabold'>The Ultimate Platform to Share Knowledge</span>
+        <h1 className='text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-extrabold leading-tight'>
+          <span className='text-orange-600'>SkillHub: </span>
+          <span >The Ultimate Platform to Share Knowledge</span>
+        </h1>
       </div>
+
+      {/* Subtitle */}
       <div
-      className='text-xl m-2'>A beginner-friendly platform for mastering programming skills.
+      className='text-base sm:text-lg md:text-xl lg:text-2xl text-gray-400 text-center mb-4 sm:mb-6 max-w-3xl px-4'>
+        A beginner-friendly platform for mastering programming skills.
       </div>
-      <div className='m-2'>
+
+      {/* CTA Button */}
+      <div className='mb-8 sm:mb-12'>
         <button
-        className='w-fit h-fit bg-orange-500 hover:bg-orange-600 transition-all duration-400 hover:p-4 p-3 text-xl hover:text-2xl rounded-2xl cursor-pointer'
-        onClick={() => navigate("/courses")}>Explore Courses</button>
+        className='bg-orange-500 hover:bg-orange-600 transition-all duration-300 px-6 py-3 sm:px-8 sm:py-4 text-lg sm:text-xl md:text-2xl font-semibold text-white rounded-2xl cursor-pointer shadow-lg hover:shadow-xl transform hover:scale-105'
+        onClick={() => navigate("/courses")}>
+          Explore Courses
+        </button>
       </div>
-      {/* Sccrollngf images section */}
+
+      {/* Scrolling Images Section */}
       <div
-      className='overflow-hidden w-full mt-10'>
-        
-         <div className='flex whitespace-nowrap animate-[scroll_20s_linear_infinite]'>
-            <img src={img1} alt=""className='w-70 h-60 mx-4'/>
-            <img src={img2} alt=""className='w-70 h-60 mx-4' />
-            <img src={img3} alt=""className='w-70 h-60 mx-4' />
-            <img src={img1} alt=""className='w-70 h-60 mx-4' />
-            <img src={img2} alt=""className='w-70 h-60 mx-4' />
-            <img src={img3} alt=""className='w-70 h-60 mx-4' />
-         </div>
+      className='overflow-hidden w-full mt-6 sm:mt-8 md:mt-10'>
+        <div className='flex whitespace-nowrap animate-[scroll_20s_linear_infinite] sm:animate-[scroll_25s_linear_infinite] md:animate-[scroll_30s_linear_infinite]'>
+          <img src={img1} alt="Course preview" className='w-48 h-36 sm:w-56 sm:h-44 md:w-64 md:h-48 lg:w-80 lg:h-60 mx-2 sm:mx-3 md:mx-4 rounded-lg object-cover shadow-md'/>
+          <img src={img2} alt="Course preview" className='w-48 h-36 sm:w-56 sm:h-44 md:w-64 md:h-48 lg:w-80 lg:h-60 mx-2 sm:mx-3 md:mx-4 rounded-lg object-cover shadow-md'/>
+          <img src={img3} alt="Course preview" className='w-48 h-36 sm:w-56 sm:h-44 md:w-64 md:h-48 lg:w-80 lg:h-60 mx-2 sm:mx-3 md:mx-4 rounded-lg object-cover shadow-md'/>
+          <img src={img1} alt="Course preview" className='w-48 h-36 sm:w-56 sm:h-44 md:w-64 md:h-48 lg:w-80 lg:h-60 mx-2 sm:mx-3 md:mx-4 rounded-lg object-cover shadow-md'/>
+          <img src={img2} alt="Course preview" className='w-48 h-36 sm:w-56 sm:h-44 md:w-64 md:h-48 lg:w-80 lg:h-60 mx-2 sm:mx-3 md:mx-4 rounded-lg object-cover shadow-md'/>
+          <img src={img3} alt="Course preview" className='w-48 h-36 sm:w-56 sm:h-44 md:w-64 md:h-48 lg:w-80 lg:h-60 mx-2 sm:mx-3 md:mx-4 rounded-lg object-cover shadow-md'/>
+        </div>
       </div>
-       <style>{`
+
+      <style>{`
         @keyframes scroll {
           0% { transform: translateX(0%); }
           100% { transform: translateX(-50%); }

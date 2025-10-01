@@ -3,38 +3,72 @@ import { Link } from 'react-router-dom'
 
 const Footer = () => {
   return (
-    <footer className='border-t border-gray-500 h-80 bg-transparent px-6 py-10 mt-20 '>
-     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 w-full max-w-7xl  mx-auto  my-auto  ">
-        <div className='text-center'>
-           <span className='font-semibold text-xl text-orange-500 mb-3'>Skill<span className='text-sky-600'>Hub</span></span>
-           <p className='text-lg '> Empowering learners worldwide with top-notch online courses and expert-led content.</p>
+    <footer className='border-t border-gray-300 bg-transparant px-4 sm:px-6 md:px-8 lg:px-12 py-8 sm:py-10 md:py-12 mt-10 sm:mt-16 md:mt-20'>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 md:gap-10 w-full max-w-7xl mx-auto">
+        
+        {/* Brand Section */}
+        <div className='text-center sm:text-left'>
+          <h2 className='font-bold text-xl sm:text-2xl mb-3 sm:mb-4'>
+            <span className='text-orange-500'>Skill</span>
+            <span className='text-sky-600'>Hub</span>
+          </h2>
+          <p className='text-sm sm:text-base text-gray-600 leading-relaxed'>
+            Empowering learners worldwide with top-notch online courses and expert-led content.
+          </p>
         </div>
-         <div className=' text-center '>
-           <h3 className='font-semibold text-lg mb-3'>Quick Links</h3>
-          <ul className='space-y-2 text-sm'>
-            <li><Link href="/" className="hover:underline">Home</Link></li>
-            <li><Link href="/courses"  className="hover:underline">Courses</Link></li>
-            <li><Link href="#" className="hover:underline">About Us</Link></li>
-            <li><Link href="#" className="hover:underline">Contact Us</Link></li>
+
+        {/* Quick Links Section */}
+        <div className='text-center sm:text-left'>
+          <h3 className='font-semibold text-lg sm:text-xl mb-3 sm:mb-4 text-gray-800'>Quick Links</h3>
+          <ul className='space-y-2 text-sm sm:text-base'>
+            <li>
+              <Link to="/" className="text-gray-600 hover:text-orange-500 hover:underline transition-colors">
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link to="/courses" className="text-gray-600 hover:text-orange-500 hover:underline transition-colors">
+                Courses
+              </Link>
+            </li>
+            <li>
+              <Link to="#" className="text-gray-600 hover:text-orange-500 hover:underline transition-colors">
+                About Us
+              </Link>
+            </li>
+            <li>
+              <Link to="#" className="text-gray-600 hover:text-orange-500 hover:underline transition-colors">
+                Contact Us
+              </Link>
+            </li>
           </ul>
         </div>
-         <div >
-           <h3 className='text-lg font-semibold mb-3'>Stay Updated</h3>
-           <p className='text-sm mb-4'> Subscripbe to our newsletter to get the latest updates</p>
-           <form className='flex'>
+
+        {/* Newsletter Section */}
+        <div className='text-center sm:text-left sm:col-span-2 lg:col-span-1'>
+          <h3 className='text-lg sm:text-xl font-semibold mb-3 sm:mb-4 text-gray-800'>Stay Updated</h3>
+          <p className='text-sm sm:text-base text-gray-600 mb-4'>
+            Subscribe to our newsletter to get the latest updates
+          </p>
+          <form className='flex flex-col sm:flex-row gap-2 max-w-md mx-auto sm:mx-0'>
             <input 
-            type="email"
-            placeholder='Enter your email'
-            className='px-3 py-2 rounded-l bg-gray-800 text-sm text-white placeholder-gray-500 focus:outline-none'
+              type="email"
+              placeholder='Enter your email'
+              className='flex-1 px-4 py-2 sm:py-3 rounded-lg sm:rounded-l-lg sm:rounded-r-none bg-white border border-gray-300 text-sm sm:text-base text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent'
             />
-            <button type='submit'
-            className='bg-blue-600 hover:bg-blue-700 px-4 py2 rounded-r text-sm font-medium text-white'>Subscribe</button>
-           </form>
+            <button 
+              type='submit'
+              className='bg-blue-600 hover:bg-blue-700 px-4 sm:px-6 py-2 sm:py-3 rounded-lg sm:rounded-r-lg sm:rounded-l-none text-sm sm:text-base font-medium text-white transition-colors shadow-md hover:shadow-lg'
+            >
+              Subscribe
+            </button>
+          </form>
         </div>
       </div>
 
-      <div className='mt-10 border-t pt-6 text-sm text-center text-gray-500'>
-         © {2025} EduPlatform. All rights reserved.
+      {/* Copyright Section */}
+      <div className='mt-8 sm:mt-10 md:mt-12 pt-6 sm:pt-8 border-t border-gray-300 text-xs sm:text-sm text-center text-gray-500'>
+        © {new Date().getFullYear()} SkillHub. All rights reserved.
       </div>
     </footer>
   )
