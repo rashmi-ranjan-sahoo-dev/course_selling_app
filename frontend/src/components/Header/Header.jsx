@@ -6,7 +6,8 @@ import { HiMenuAlt3, HiX } from "react-icons/hi";
 import { AuthContext } from "../ContextAPI/AuthContext";
 import Auth from "../Auth/Auth";
 import Logout from "../Logout/Logout";
-
+import { Link } from "react-router-dom";
+;
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { isDark, setIsDark, isActive, setIsActive, isLoggedIn, role } = useContext(AuthContext);
@@ -43,24 +44,24 @@ const Header = () => {
 
       {/* Desktop Navigation Links */}
       <div className='hidden lg:flex items-center gap-4 xl:gap-8'>
-        <a 
-          href="/"
+        <Link 
+          to="/"
           className='text-lg xl:text-xl font-mono text-gray-400 hover:text-orange-500 hover:border-b-2 hover:border-orange-500 transition-all duration-200 pb-1'
         >
           Home
-        </a>
-        <a 
-          href="/courses"
+        </Link>
+        <Link 
+          to="/courses"
           className='text-lg xl:text-xl font-mono text-gray-400 hover:text-orange-500 hover:border-b-2 hover:border-orange-500 transition-all duration-200 pb-1'
         >
           Courses
-        </a>
-        <a 
-          href="/purchases"
+        </Link>
+        <Link 
+          to="/purchases"
           className='text-lg xl:text-xl font-mono text-gray-400 hover:text-orange-500 hover:border-b-2 hover:border-orange-500 transition-all duration-200 pb-1'
         >
           Purchases
-        </a>
+        </Link>
       </div>
 
       {/* Right Side Icons */}
