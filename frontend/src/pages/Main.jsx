@@ -10,7 +10,7 @@ import Footer from '../components/Footer/Footer'
 const Main = () => {
   const {isDark} = useContext(AuthContext)
   return (
-    <div className= {`h-full w-full ${isDark ? "bg-black text-white" : "bg-white text-black"}`}>
+    <div id='rinku' className= {`h-full w-full ${isDark === 'dark' ? "bg-black text-white" : "bg-white text-black"}`}>
       <Header/>
       <Body/>
       <Outlet/>

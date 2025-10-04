@@ -5,7 +5,7 @@ import { AuthProvider } from './components/ContextAPI/AuthContext'
 import App from './App'
 
 createRoot(document.getElementById('root')).render(
-  <AuthProvider>
+  <AuthProvider >
       <App />
   </AuthProvider>
 )

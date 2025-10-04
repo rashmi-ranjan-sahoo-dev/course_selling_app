@@ -7,14 +7,25 @@ import { AuthContext } from "../ContextAPI/AuthContext";
 import Auth from "../Auth/Auth";
 import Logout from "../Logout/Logout";
 import { Link } from "react-router-dom";
+// import { useContext } from "react";
+// import { AuthContext } from "../ContextAPI/AuthContext";
 ;
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { isDark, setIsDark, isActive, setIsActive, isLoggedIn, role } = useContext(AuthContext);
 
+ 
+
   function toggleIsDark() {
-    setIsDark(!isDark);
+    if(isDark !== "dark"){
+      setIsDark("dark");
+      localStorage.setItem("theme",isDark);
+    }else{
+      setIsDark("light")
+    }
   }
+
+  
 
   function toggleIsActive() {
     setIsActive(!isActive);
@@ -24,8 +35,8 @@ const Header = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   }
 
-  console.log(isActive);
-  console.log(isLoggedIn);
+  // console.log(isActive);
+  // console.log(isLoggedIn);
 
   return (
     <nav className='h-16 sm:h-20 md:h-24 w-full flex items-center justify-between px-4 sm:px-6 md:px-8 lg:px-12 border-b border-gray-300  relative'>
