@@ -1,15 +1,15 @@
-require('dotenv').config();
 
-
-const { Router } = require("express");
-const { userModel, purchaseModel, courseModel } = require("../db/db");
-const { z } = require("zod");
-const bcrypt = require("bcrypt");
-const jwt = require("jsonwebtoken")
-const JWT_USER = process.env.JWT_USER_SECRET
-const { userMiddleWare } = require("../middleware/userMid.js")
+import { Router } from "express";
+import { userModel,purchaseModel,courseModel } from "../db/db.js";
+import z from "zod"
+import bcrypt from "bcrypt"
+import jwt from "jsonwebtoken"
+import { userMiddleWare } from "../middleware/userMid.js";
+import dotenv from "dotenv"
+dotenv.config();
 
 const userRouter = Router();
+const JWT_USER = process.env.JWT_USER_SECRET
 
 userRouter.post("/signup",async function (req,res) {
 
@@ -146,6 +146,4 @@ userRouter.get("/purchases",userMiddleWare,async function (req,res) {
 
 })
 
-module.exports = {
-    userRouter:userRouter
-}
+export default userRouter;

@@ -1,15 +1,31 @@
-const express = require("express");
+import express from "express"
 const app = express();
-const mongoose = require("mongoose");
-const cors = require("cors");
-require('dotenv').config();
+import mongoose from "mongoose";
+import cors from "cors"
+import { fileURLToPath } from "url";
+import path from "path";
+import dotenv from "dotenv"
+dotenv.config();
 
-const { userRouter } = require("./routes/user")
-const { courseRouter } = require("./routes/course")
-const { adminRouter } = require("./routes/admin")
+
+import userRouter from "./routes/user.js"
+import courseRouter from "./routes/course.js"
+import adminRouter from "./routes/admin.js"
 
 app.use(express.json());
 app.use(cors());
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+if (process.env.NODE_ENV === "production") {
+  const frontendPath = path.join(__dirname, "../frontend/dist");
+  app.use(express.static(frontendPath));
+
+  app.get("*", (req, res) => {
+    res.sendFile(path.join(frontendPath, "index.html"));
+  });
+}
 
 const port = process.env.PORT
 const mongo_url = process.env.MONGO_URL

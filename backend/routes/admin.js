@@ -1,13 +1,15 @@
-require('dotenv').config();
+import { Router } from "express";
+import { adminModel, courseModel } from "../db/db.js";
+import z from "zod"
+import bcrypt from "bcrypt"
+import jwt from "jsonwebtoken"
+import {adminMiddleWare} from "../middleware/adminMid.js"
+import dotenv from "dotenv";
+dotenv.config();
 
-const { Router, json } = require("express")
+
+const JWT_ADMIN = process.env.JWT_ADMIN_SECRET;
 const adminRouter = Router();
-const { adminModel, courseModel } = require("../db/db.js")
-const { z } = require("zod");
-const bcrypt = require("bcrypt");
-const jwt = require("jsonwebtoken")
-const JWT_ADMIN = process.env.JWT_ADMIN_SECRET
-const { adminMiddleWare } = require("../middleware/adminMid.js");
 
 
 adminRouter.post("/signup",async function (req,res){
@@ -243,6 +245,4 @@ adminRouter.delete("/course", adminMiddleWare, async function (req, res) {
 });
 
 
-module.exports = {
-    adminRouter: adminRouter
-}
+export default adminRouter;

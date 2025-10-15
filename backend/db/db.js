@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+import mongoose from "mongoose";
 
 const Schema = mongoose.Schema;
 const ObjectId = mongoose.Types.ObjectId;
@@ -38,14 +38,15 @@ const purchaseSchema = new Schema({
     courseId: ObjectId
 });
 
-const userModel = mongoose.model("user", userSchema);
-const adminModel = mongoose.model("admin", adminSchema);
-const courseModel = mongoose.model("course", courseSchema);
-const purchaseModel = mongoose.model("purchase", purchaseSchema);
+export const userModel = mongoose.model("user", userSchema);
+export const adminModel = mongoose.model("admin", adminSchema);
+export const courseModel = mongoose.model("course", courseSchema);
+export const purchaseModel = mongoose.model("purchase", purchaseSchema);
 
-module.exports = {
-    userModel,
-    adminModel,
-    courseModel,
-    purchaseModel
-}
+// module.exports = {
+//     userModel,
+//     adminModel,
+
+//     courseModel,
+//     purchaseModel
+// }

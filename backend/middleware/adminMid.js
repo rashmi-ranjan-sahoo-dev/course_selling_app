@@ -1,10 +1,9 @@
-require('dotenv').config();
-
-
-const jwt = require("jsonwebtoken");
+import dotenv from "dotenv"
+dotenv.config()
+import jwt from "jsonwebtoken"
 const JWT_ADMIN_SECRET = process.env.JWT_ADMIN_SECRET;
 
-const adminMiddleWare = (req,res,next) =>{
+export const adminMiddleWare = (req,res,next) =>{
      const token = req.headers.authorization?.split(" ")[1];
 
     // console.log(JWT_ADMIN_SECRET)
@@ -26,6 +25,3 @@ const adminMiddleWare = (req,res,next) =>{
 
 }
 
-module.exports = {
-    adminMiddleWare
-}
