@@ -1,6 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { API } from "../../api";
 
 
 export default function SignupForm({ role }) {
@@ -22,7 +23,7 @@ export default function SignupForm({ role }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const url = role === "admin" ? "http://localhost:3000/api/v1/admin/signup" : "http://localhost:3000/api/v1/user/signup";
+      const url = role === "admin" ?  `${API}/admin/signup`: `${API}/user/signup`;
       const res = await axios.post(url, formData);
       setMessage(res.data.message || "Signup successful");
       if(res){

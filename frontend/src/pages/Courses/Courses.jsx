@@ -3,13 +3,14 @@ import axios from 'axios'
 import Header from '../../components/Header/Header';
 import { useContext } from 'react';
 import { AuthContext } from '../../components/ContextAPI/AuthContext';
+import { API } from '../../api';
 
 const Courses = () => {
   const [courses, setCourses] = useState([]);
   const {isDark} = useContext(AuthContext);
 
   useEffect(() => {
-    axios.get("http://localhost:3000/api/v1/course/preview")
+    axios.get( `${API}/course/preview`)
       .then(res => setCourses(res.data.courses))
       .catch(err => console.log(err));
   }, []);
@@ -19,7 +20,7 @@ const Courses = () => {
       const token = localStorage.getItem("userToken");
       console.log(token);
       await axios.post(
-        "http://localhost:3000/api/v1/course/purchase",
+        `${API}/course/purchase`,
         { courseId },
         { headers: { Authorization: `Bearer ${token}` } }
       );

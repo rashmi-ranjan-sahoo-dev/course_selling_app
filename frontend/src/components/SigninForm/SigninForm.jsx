@@ -3,6 +3,7 @@ import axios from "axios";
 import { AuthContext } from "../ContextAPI/AuthContext";
 import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
+import { API } from "../../api";
 
 
 export default function SigninForm({ role }) {
@@ -21,7 +22,7 @@ export default function SigninForm({ role }) {
     e.preventDefault();
     try {
       const url = role === "admin" ?
-       "http://localhost:3000/api/v1/admin/signin" : "http://localhost:3000/api/v1/user/signin";
+        `${API}/admin/signin`: `${API}/user/signin`;
 
        
       const res = await axios.post(url, formData);

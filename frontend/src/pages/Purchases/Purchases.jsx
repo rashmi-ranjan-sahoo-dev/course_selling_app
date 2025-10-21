@@ -3,6 +3,7 @@ import axios from "axios";
 import Header from "../../components/Header/Header"; 
 import { useContext } from "react";
 import { AuthContext } from "../../components/ContextAPI/AuthContext";
+import { API } from "../../api";
 
 export default function Purchases() {
   const [courses, setCourses] = useState([]);
@@ -13,7 +14,7 @@ export default function Purchases() {
     const token = localStorage.getItem("userToken"); // token from signin
 
     axios
-      .get("http://localhost:3000/api/v1/user/purchases", {
+      .get(`${API}/user/purchases`, {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((res) => {

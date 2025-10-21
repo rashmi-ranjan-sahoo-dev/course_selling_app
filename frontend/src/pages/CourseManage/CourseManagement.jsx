@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Plus, Edit2, Trash2, Save, X } from 'lucide-react';
+import { API } from '../../api';
 
 export default function CourseManagement() {
   const [courses, setCourses] = useState([]);
@@ -23,7 +24,7 @@ export default function CourseManagement() {
     isPreview: false
   });
 
-  const API_BASE = 'http://localhost:3000/api/v1/admin';
+  const API_BASE = `${API}/admin`;
 
   const getToken = () => localStorage.getItem('adminToken');
 
