@@ -19,7 +19,7 @@ const Footer = () => {
 
         {/* Quick Links Section */}
         <div className='text-center sm:text-left'>
-          <h3 className='font-semibold text-lg sm:text-xl mb-3 sm:mb-4 text-gray-800'>Quick Links</h3>
+          <h3 className='font-semibold text-lg sm:text-xl mb-3 sm:mb-4 text-gray-500'>Quick Links</h3>
           <ul className='space-y-2 text-sm sm:text-base'>
             <li>
               <Link to="/" className="text-gray-600 hover:text-orange-500 hover:underline transition-colors">
@@ -46,7 +46,7 @@ const Footer = () => {
 
         {/* Newsletter Section */}
         <div className='text-center sm:text-left sm:col-span-2 lg:col-span-1'>
-          <h3 className='text-lg sm:text-xl font-semibold mb-3 sm:mb-4 text-gray-800'>Stay Updated</h3>
+          <h3 className='text-lg sm:text-xl font-semibold mb-3 sm:mb-4 text-gray-500'>Stay Updated</h3>
           <p className='text-sm sm:text-base text-gray-600 mb-4'>
             Subscribe to our newsletter to get the latest updates
           </p>
