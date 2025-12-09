@@ -12,10 +12,6 @@ export const AuthProvider  = ( {children}) => {
     localStorage.setItem('theme', isDark);
    },[isDark])
 
-
- 
-
-
   return (
     <AuthContext.Provider
     value={{ isLoggedIn,setIsLoggedIn,isDark,setIsDark,isActive,setIsActive,role,setRole}}

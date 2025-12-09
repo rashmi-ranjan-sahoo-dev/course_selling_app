@@ -41,6 +41,7 @@ export default function CourseManagement() {
           'Authorization': `Bearer ${getToken()}`
         }
       });
+      
       const data = await response.json();
       if (response.ok) {
         setCourses(data.courses || []);

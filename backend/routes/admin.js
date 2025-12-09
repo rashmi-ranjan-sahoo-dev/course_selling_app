@@ -7,7 +7,6 @@ import {adminMiddleWare} from "../middleware/adminMid.js"
 import dotenv from "dotenv";
 dotenv.config();
 
-
 const JWT_ADMIN = process.env.JWT_ADMIN_SECRET;
 const adminRouter = Router();
 
